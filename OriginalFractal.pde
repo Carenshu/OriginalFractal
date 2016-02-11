@@ -1,6 +1,6 @@
 public void setup()
 {
-	size(450,450);
+        size(450,450);
 }
 
 public void draw()
@@ -10,14 +10,21 @@ public void draw()
 
 public void fractal (int x, int y, int r)
 {
-	if (r>=50)
-	{
-        fractal(x,y+r/10,r/2);
-        fractal(x,y,r/2);
-	}
-	else
-	{
-		noFill();
-		ellipse(x ,y ,r,r);
-	}
+        if (r>=50)
+        {
+            
+        //rect(x+r,y+r,r/2,r/2);
+        //rect(x+r,y-r/2,r/2,r/2);
+        //rect(x-r/2,y-r/2,r/2,r/2);
+        //rect(x-r/2,y+r,r/2,r/2);
+        fractal(x+r,y+r,r/2);
+        fractal(x+r,y-r/2,r/2);
+        fractal(x-r/2,y-r/2,r/2);
+        fractal(x-r/2,y+r,r/2);
+        }
+        else
+        {
+                fill(255);
+                rect(x,y,r,r);
+        }
 }
